@@ -1,0 +1,46 @@
+% AQUI VOCÊ CONTROLA QUAIS ELEMENTOS E CAPÍTULOS DEVEM SER EXIBIDOS, RECOMENDADO DESATIVAR AS ETAPAS QUE JÁ FORAM CONCLUÍDAS, ASSIM O ARQUIVO É COMPILADO MAIS RÁPIDO.
+% os elementos pré-textuais devem ser modificados no main.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ELEMENTOS TEXTUAIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ------------------------------------------------------
+% introdução
+% ------------------------------------------------------
+\textual
+	\input{ElementosTextuais/Introducao/introducao}
+	\input{ElementosTextuais/antigo/fundamentacao/fundamentacao.tex}
+	\input{ElementosTextuais/antigo/metodologia/metodologia}
+	\input{ElementosTextuais/antigo/outro_capitulo/capitulo_exemplo}
+\bookmarksetup{startatroot}% 
+% ------------------------------------------------------
+% desenvolvimento
+% ------------------------------------------------------
+
+% ------------------------------------------------------
+% conclusão
+% ------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ELEMENTOS PÓS-TEXTUAIS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+%\bibliographystyle{abntexalfenglish} %caso seja em inglês, retire o comentário desta linha
+% \renewcommand{\bibname}{REFER\^ENCIAS}
+%\renewcommand{\bibname}{Bibliography}
+% \addbibresource{sample.bib}
+\bibliography{references2}
+
+% ------------------------------------------------------
+% ademais
+% ------------------------------------------------------
+	\include{ElementosPosTextuais/apendice} % apendice
+	\include{ElementosPosTextuais/anexos} % anexos
+%	\include{ElementosPosTextuais/glossario} % glossario
+
+\printindex

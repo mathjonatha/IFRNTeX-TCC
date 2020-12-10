@@ -65,12 +65,14 @@
 %	brazil,				% o último idioma é o principal do documento
 	english,
 	brazil,
-	]{Estrutura/abntex2/abntex2}
+	]{abntex2/abntex2}
 	\renewcommand{\baselinestretch}{1.5} %para customizar o espaço entre as linhas do texto
-% --
-% SETTINGS
 
-\usepackage{Estrutura/abntex2/abntex2-ifrn}
+% -----------------------------------------------------------
+% SETTINGS
+% -----------------------------------------------------------
+
+\usepackage{abntex2/abntex2-ifrn}
 
 % \usepackage[noframe]{showframe}
 % \usepackage{showframe}
@@ -82,10 +84,10 @@
 
 \usepackage{pdfpages} %para incluir pdf como páginas
 
-
-% ---
+% -----------------------------------------------------------
 % PACOTES
-% ---
+% -----------------------------------------------------------
+
 \usepackage{float}
 \usepackage{cmap}				% Mapear caracteres especiais no PDF
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
@@ -96,7 +98,7 @@
 %\usepackage{color}				% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{lipsum}				% para geração de dummy text
-\usepackage[versalete,alf,abnt-and-type=e,abnt-etal-list=0,abnt-etal-cite=3]{Estrutura/abntex2/abntex2cite} 
+\usepackage[versalete,alf,abnt-and-type=e,abnt-etal-list=0,abnt-etal-cite=3]{abntex2/abntex2cite} 
 \usepackage{multirow}
 \usepackage[section]{placeins}
 \usepackage{substr}
@@ -132,18 +134,16 @@
 % fim
 % -----------------------------------------------------------
 
-
 \usepackage{lscape} 
 \usepackage{rotating} %rotates the figures, page
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage{setspace} 
 
-
-
 % ----------------------------------------------------------
 % PERSONALIZAÇÃO DE CORES
 % ----------------------------------------------------------
+
 \definecolor{blue}{RGB}{41,5,195}
 \definecolor{gray}{rgb}{.4,.4,.4}
 \definecolor{gray}{rgb}{.4,.4,.4}
@@ -164,19 +164,19 @@
 % ----------------------------------------------------------
 % PERSONALIZAÇÃO DO USUÁRIO
 % ----------------------------------------------------------
-\input{dadosDoTrabalho}
 
+\input{dadosDoTrabalho}
 
 % ----------------------------------------------------------
 % COMPILA O ÍNDICE
 % ----------------------------------------------------------
-\makeindex
-% ---
 
+\makeindex
 
 % ----------------------------------------------------------
 % LISTA E ABREVIATURAS E SIGLAS
 % ----------------------------------------------------------
+
 \input{ElementosPreTextuais/acronimos}
 
 \makenoidxglossaries
@@ -191,15 +191,14 @@
 % ----------------------------------------------------------
 % GLOSSÁRIO
 % ----------------------------------------------------------
-\input{ElementosPosTextuais/glossaries}
 
-
-\input{Estrutura/packages}
-
+\input{ElementosPosTextuais/glossario}
+\input{userPackages}
 
 % ----------------------------------------------------------
 % INÍCIO DO DOCUMENTO
 % ----------------------------------------------------------
+
 \begin{document}
 
 \frenchspacing % Retira espaço extra obsoleto entre as frases.
@@ -218,14 +217,14 @@
 % ----------------------------------------------------------
 % LISTA DE FIGURAS
 % ----------------------------------------------------------
+
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
 
-
-% ---
+% ----------------------------------------------------------
 % LISTA DE CÓDIGOS FONTES
-% ---
+% ----------------------------------------------------------
 
 \pdfbookmark[0]{\lstlistingname}{lol} % caso não tenha quadros, comente esta linha 
 \counterwithout{lstlisting}{chapter}
@@ -260,14 +259,14 @@
 }
 \cleardoublepage
 
-% ---
+
+% ----------------------------------------------------------
 % LISTA DE QUADROS
-% ---
+% ----------------------------------------------------------
+
 \pdfbookmark[0]{\listofquadrosname}{loq} % caso não tenha quadros, comente esta linha 
 \listofquadros* % caso não tenha quadros, comente esta linha 
 \cleardoublepage
-
-
 
 % ----------------------------------------------------------
 % LISTA DE TABELAS
@@ -277,9 +276,6 @@
 \listoftables*
 \cleardoublepage
 
-
-        
-  
 % ----------------------------------------------------------
 % LISTA E ABREVIATURAS E SIGLAS
 % ----------------------------------------------------------
@@ -300,10 +296,10 @@
 % ----------------------------------------------------------
 % LISTA DE SIMBOLOS
 % ----------------------------------------------------------
-\input{ElementosPreTextuais/list_simbol}
+
+\input{ElementosPreTextuais/listaDeSimbolos}
 
 % ----------------------------------------------------------
-%\input{ElementosPreTextuais/list_simbol}
 
 
 
@@ -323,44 +319,11 @@
 
 
 
-
 % ----------------------------------------------------------
-% ELEMENTOS TEXTUAIS
+% IMPORTANDO ELEMENTOS E CAPÍTULOS
 % ----------------------------------------------------------
-\textual
 
-\input{summary}
-
-\bookmarksetup{startatroot}% 
-
-
-% ----------------------------------------------------------
-% ELEMENTOS PÓS-TEXTUAIS
-% ----------------------------------------------------------
-\postextual
-
-
-% ----------------------------------------------------------
-% Referências bibliográficas
-% ----------------------------------------------------------
-%\bibliographystyle{abntexalfenglish} %caso seja em inglês, retire o comentário desta linha
-
-% \renewcommand{\bibname}{REFER\^ENCIAS}
-%\renewcommand{\bibname}{Bibliography}
-% \addbibresource{sample.bib}
-\bibliography{references2}
-
-
-% ----------------------------------------------------------
-% Apêndices
-% ----------------------------------------------------------
-\include{ElementosPosTextuais/appendix}
-% ----------------------------------------------------------
-% Anexos
-% ----------------------------------------------------------
-\include{ElementosPosTextuais/anexos}
-
-\printindex
+\input{elementos}
 
 
 \end{document}
