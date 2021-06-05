@@ -789,10 +789,26 @@
 % ---
 % Dedicatoria
 \newenvironment{dedicatoria}[1][]{%
-   \ifthenelse{\equal{#1}{}}{%
+  \ifthenelse{\equal{#1}{}}{%
     \PRIVATEbookmarkthis{\dedicatorianame}
     }{\pretextualchapter{#1}}
-  }{\PRIVATEclearpageifneeded}
+
+    \vspace*{\fill}
+
+    \begin{flushright}
+        \begin{em}
+        \begin{minipage}{.5\textwidth}
+            \begin{OnehalfSpacing}
+                \setlength\parindent{0pt}
+                \setlength\parskip{12pt}
+}	
+{%       
+		\end{OnehalfSpacing}
+        \end{minipage}
+        \end{em}
+    \end{flushright}
+}
+
 % ---
 
 % ---
@@ -802,13 +818,44 @@
   }{\PRIVATEclearpageifneeded}
 % ---
 
-% ---
-% Epigrafe
+% ----------------------------------------------------------
+% EPIGRAFE
+% ----------------------------------------------------------
+
 \newenvironment{epigrafe}[1][]{%
    \ifthenelse{\equal{#1}{}}{%
     \PRIVATEbookmarkthis{\epigraphname}
     }{\pretextualchapter{#1}}
-  }{\PRIVATEclearpageifneeded}
+    
+    \vspace*{\fill}
+
+    \begin{flushright}
+        \begin{minipage}{.5\textwidth}
+            \begin{OnehalfSpacing}
+                \setlength\parindent{0pt}
+                \setlength\parskip{12pt}
+}
+{%
+            \end{OnehalfSpacing}
+        \end{minipage}
+    \end{flushright}
+    \newpage
+}
+
+\newenvironment{autorepigrafe}[1][]
+{%
+    \vspace*{-1,5cm}
+		\begin{flushright}
+            \begin{OnehalfSpacing}
+                \setlength\parindent{0pt}
+                \setlength\parskip{12pt}
+}
+{%
+            \end{OnehalfSpacing}
+		   \end{flushright}
+}
+
+
 % ---
 
 % ---

@@ -77,7 +77,7 @@
 % \usepackage[noframe]{showframe}
 % \usepackage{showframe}
 
-%\overfullrule=4mm %para identificar onde existem os alertas de linhas grandes mal formatada pelo LaTex, basta comentar para não aparecer a barra lateral preta na linha em questão.
+\overfullrule=4mm %para identificar onde existem os alertas de linhas grandes mal formatada pelo LaTex, basta comentar para não aparecer a barra lateral preta na linha em questão.
 
 \renewcommand*\arraystretch{1.2} %para customizar o espaço entre as linhas das tabelas
 
@@ -89,7 +89,7 @@
 % -----------------------------------------------------------
 
 \usepackage{float}
-\usepackage{cmap}				% Mapear caracteres especiais no PDF
+%\usepackage{cmap}				% Mapear caracteres especiais no PDF
 \usepackage{lmodern}			% Usa a fonte Latin Modern			
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 % \usepackage[utf8]{inputenc}	% JÁ VEM POR PADRÃO A PARTIR DO TEXLIVE 2018% Codificacao do documento (conversão % automática dos acentos)
@@ -101,7 +101,6 @@
 \usepackage[versalete,alf,abnt-and-type=e,abnt-etal-list=0,abnt-etal-cite=3]{abntex2/abntex2cite} 
 \usepackage{multirow}
 \usepackage[section]{placeins}
-\usepackage{substr}
 
 
 % -----------------------------------------------------------
@@ -117,7 +116,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \newglossarystyle{modsuper}{%
-  \glossarystyle{super}%
+  \setglossarystyle{super}% Antes estava avisando que estava descontinuado o \glossarystyle{super}.
   \renewcommand{\glsgroupskip}{}
   
   % put the glossary in a longtable environment:
@@ -139,6 +138,7 @@
 \usepackage{tikz}
 \usepackage[section]{placeins}
 \usepackage{setspace} 
+\usepackage{substr}
 
 % ----------------------------------------------------------
 % PERSONALIZAÇÃO DE CORES
@@ -193,7 +193,7 @@
 % ----------------------------------------------------------
 
 \input{ElementosPosTextuais/glossario}
-\input{userPackages}
+\input{seusPackages}
 
 % ----------------------------------------------------------
 % INÍCIO DO DOCUMENTO
