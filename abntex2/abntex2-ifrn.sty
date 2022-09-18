@@ -52,13 +52,13 @@
   
   
   \renewcommand{\cftchapterfont}{\bfseries\normalsize}
-  \renewcommand{\cftchapterpagefont}{\cftchapterfont}
+  \renewcommand{\cftchapterpagefont}{\normalfont}
   %
   \renewcommand{\cftsectionfont}{\normalsize}
   \renewcommand{\cftsectionpagefont}{\cftsectionfont}
   %
   \renewcommand{\cftsubsectionfont}{\bfseries\normalsize}
-  \renewcommand{\cftsubsectionpagefont}{\cftsubsectionfont}
+  \renewcommand{\cftsubsectionpagefont}{\normalfont}
   %
   % 
   \renewcommand{\cftsubsubsectionfont}{\itshape\normalsize}
@@ -334,8 +334,8 @@
       	\SingleSpacing
          \imprimirpreambulo
             
-            \vspace*{1cm}
-            {\imprimirareaconcentracao\par}
+            \vspace*{-1cm}
+            %{\imprimirareaconcentracao\par}
             {\imprimirorientador\par}
                 \abntex@ifnotempty{\imprimircoorientador}{%
                {\imprimircoorientador}%
