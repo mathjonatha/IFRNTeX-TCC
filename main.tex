@@ -64,7 +64,7 @@
 	spanish,			% idioma adicional para hifenização
 %	brazil,				% o último idioma é o principal do documento
 	english,
-	brazil,
+	brazil, hidelinks
 	]{abntex2/abntex2}
 	\renewcommand{\baselinestretch}{1.5} %para customizar o espaço entre as linhas do texto
 
@@ -88,19 +88,35 @@
 % PACOTES
 % -----------------------------------------------------------
 
-\usepackage{float}
+\usepackage{float, caption, subcaption}
 %\usepackage{cmap}				% Mapear caracteres especiais no PDF
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage{times}			% Usa a fonte Latin Modern			
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 % \usepackage[utf8]{inputenc}	% JÁ VEM POR PADRÃO A PARTIR DO TEXLIVE 2018% Codificacao do documento (conversão % automática dos acentos)
 \usepackage{lastpage}			% Usado pela Ficha catalográfica
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
 %\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{lipsum}				% para geração de dummy text
-\usepackage[versalete,alf,abnt-and-type=e,abnt-etal-list=0,abnt-etal-cite=3]{abntex2/abntex2cite} 
+\usepackage{graphicx, amsmath, mathtools}			% Inclusão de gráficos
+\usepackage{lipsum, url}				% para geração de dummy text
+\usepackage[alf,versalete,abnt-emphasize = bf]{abntex2cite}
+% destaca o titulo da revista ou livro em negrito;
+
+%abnt-etal-list = 3, % trabalhos com mais de 3 autores recebem et al.,;
+
+%abnt-etal-text = it, % escreve o et al., em italico;
+
+%abnt-and-type = &, % usa o carater '&' no lugar de 'e' para mais de um autor;
+
+%abnt-last-names = abnt, % trata sobrenomes 'estritamente' conforme a ABNT; e
+
+%abnt-repeated-author-omit = no % autores com + de uma entrada recebem '____.'
+
+% ################### Linha 115 ou 101? ######
+%\usepackage[versalete,alf,abnt-and-type=e,abnt-etal-list=0,abnt-etal-cite=3]{abntex2/abntex2cite}
+%\def\bibfont{\rmfamily}
 \usepackage{multirow}
 \usepackage[section]{placeins}
+\tolerance=10000
 
 
 % -----------------------------------------------------------
@@ -139,7 +155,14 @@
 \usepackage[section]{placeins}
 \usepackage{setspace} 
 \usepackage{substr}
-
+%\newcommand{\assinaturaII}[1]{
+%   \begingroup\par\centering\parbox[t]{14.2cm}{\onehalfspacing\vspace*{0.7cm}\centering\rule{15cm}{1pt}\\ 
+%   \nopagebreak #1\par}\par\endgroup
+%}
+\newcommand{\assinaturaII}[1]{
+   \begingroup\par\centering\parbox[t]{\textwidth}{\vspace*{0.7cm}\centering\rule{\textwidth}{1pt}\\ 
+   \nopagebreak #1\par}\par\endgroup
+}
 % ----------------------------------------------------------
 % PERSONALIZAÇÃO DE CORES
 % ----------------------------------------------------------
@@ -198,6 +221,11 @@
 % ----------------------------------------------------------
 % INÍCIO DO DOCUMENTO
 % ----------------------------------------------------------
+% \usepackage{fontspec}
+% \setmainfont{Arial}
+\usepackage{times}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
